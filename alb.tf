@@ -65,3 +65,9 @@ resource "aws_alb_listener" "be" {
     target_group_arn = aws_alb_target_group.be.arn
   }
 }
+
+
+output "web_endpoint" {
+  value = "http://${aws_lb.main.dns_name}"
+  description = "Hit this url to access web server"
+}
