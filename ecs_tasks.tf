@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "fe" {
   container_definitions = jsonencode([
     {
       name      = "${var.project}-frontend"
-      image     = "${var.repository}:fe-2.0.0"
+      image     = "${var.frontend_repo}:fe-2.0.0"
       essential = true
       environment = [
         {
@@ -46,9 +46,9 @@ resource "aws_ecs_task_definition" "be" {
   container_definitions = jsonencode([
     {
       name      = "${var.project}-backend"
-      image     = "${var.repository}:be-2.0.0"
+      image     = "${var.backend_repo}:be-2.0.0"
       essential = true
-       environment = [
+      environment = [
         {
           name  = "FRONT_URL",
           value = "http://${aws_lb.main.dns_name}"

@@ -18,8 +18,13 @@ variable "public_subnets" {
   type        = list(any)
 }
 
-variable "repository" {
-  description = "Repository for Docker images"
+variable "frontend_repo" {
+  description = "Front End Repository"
+  type        = string
+}
+
+variable "backend_repo" {
+  description = "Back End Repository"
   type        = string
 }
 
