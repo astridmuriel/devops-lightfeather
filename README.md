@@ -97,3 +97,9 @@ Then apply using
 ```
    terraform apply -var-file vars/devops.tfvars -auto-approve
 ```
+
+## Deploying using jenkins
+
+A jenkinsfile was created in this repository https://github.com/astridmuriel/devops-project.to allow an end to end deployment of this project.
+
+Use the credentials given to you to log in and run the job using *build now*.
