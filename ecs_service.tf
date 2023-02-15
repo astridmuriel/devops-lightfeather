@@ -11,7 +11,7 @@ resource "aws_ecs_service" "fe" {
   network_configuration {
     security_groups  = [aws_security_group.ecs_tasks_fe.id]
     subnets          = aws_subnet.private.*.id
-    assign_public_ip = true
+    assign_public_ip = false
   }
 
   load_balancer {
